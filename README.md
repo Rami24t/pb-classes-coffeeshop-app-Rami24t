@@ -1,12 +1,12 @@
 ### Coffee Shop App
 
-Write a **class** called **CoffeeShop**, which has **data properties**:
+Write a **class** called **CoffeeShop**, which has **instance data properties**:
 
 -  **name** : a string (basically, of the shop)
 -  **menu** : an array of items (of object type), with each item containing the **item** (name of the item), **type** (whether _food_ or a _drink_) and **price**.
 -  **orders** : an empty array
 
-and **accessor properties**:
+and **instance accessor properties**:
 
 -  getter **listOrders**: getter for the **orders** array.
 -  setter **listOrders**: setter for the **orders** array.
