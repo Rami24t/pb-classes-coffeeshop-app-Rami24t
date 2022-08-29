@@ -6,7 +6,7 @@ Write a **class** called **CoffeeShop**, which has **data properties**:
 -  **menu** : an array of items (of object type), with each item containing the **item** (name of the item), **type** (whether _food_ or a _drink_) and **price**.
 -  **orders** : an empty array
 
-and **Accessor properties**:
+and **accessor properties**:
 
 -  getter **listOrders**: getter for the **orders** array.
 -  setter **listOrders**: setter for the **orders** array.
