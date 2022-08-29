@@ -28,9 +28,11 @@ and **instance methods**:
 ```
 rcs.addOrder("cigarettes"); ➞ "This item is currently unavailable!"
  Rami's coffee shop does not sell cigarettes
-rcs.addOrder("iced tea"); ➞ "This item is currently unavailable!" specifying the variant of "iced tea" will help the process
-rcs.addOrder("cinnamon roll"); ➞  "Order added!"
-rcs.addOrder("iced coffee"); ➞ "Order added!" rcs.listOrders = ["cinnamon roll", "iced coffee", 'lemonade', 'vegan burger'];
+rcs.addOrder("iced tea"); ➞ "This item is currently unavailable!" 
+specifying the variant of "iced tea" will help the process
+rcs.addOrder("cinnamon roll"); ➞  "Order added! cinnamon"
+rcs.addOrder("iced coffee"); ➞ "Order added! iced coffee" 
+rcs.listOrders = ["cinnamon roll", "iced coffee", 'lemonade', 'vegan burger'];
 rcs.listOrders; ➞ ["cinnamon roll", "iced coffee"] the list of all the items in the current order
 rcs.dueAmount(); ➞ 2.17
 console.log();
