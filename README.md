@@ -11,7 +11,7 @@ and **instance accessor properties**:
 -  getter **listOrders**: getter for the **orders** array.
 -  setter **listOrders**: setter for the **orders** array.
 
-and **methods**:
+and **instance methods**:
 
 -  **addOrder**: adds the **name** of the item to the end of the **orders** array if it exists on the **menu**. Otherwise, return `"This item is currently unavailable!"`
 -  **fulfillOrder**: if the **orders** array is **not empty**, return `"The {item} is ready!"`. If the **orders** array is empty, return `"All orders have been fulfilled!"`
