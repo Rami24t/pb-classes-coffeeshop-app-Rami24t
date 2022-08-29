@@ -35,7 +35,6 @@ rcs.addOrder("iced coffee"); ➞ "Order added! iced coffee"
 rcs.listOrders = ["cinnamon roll", "iced coffee", 'lemonade', 'vegan burger'];
 rcs.listOrders; ➞ ["cinnamon roll", "iced coffee"] the list of all the items in the current order
 rcs.dueAmount(); ➞ 2.17
-console.log();
 
 rcs.fulfillOrder(); ➞ "The cinnamon roll is ready!"
 rcs.fulfillOrder(); ➞ "The iced coffee is ready!"
@@ -43,13 +42,9 @@ rcs.fulfillOrder(); ➞ "All orders have been fulfilled!"
 all orders have been presumably served
 rcs.listOrders; ➞ [] an empty array is returned if all orders have been exhausted
 rcs.dueAmount(); ➞ 0.0
-console.log();
+no new orders taken, expect a zero payable
 
-// no new orders taken, expect a zero payable
-rcs.cheapestItem();
-// ➞ "lemonade"
-rcs.drinksOnly();
-// ➞ [ 'iced coffee', 'lemonade' ]
-rcs.foodOnly();
-// ➞ [ 'cinnamon roll', 'vegan burger' ]
+rcs.cheapestItem(); ➞ "lemonade"
+rcs.drinksOnly(); ➞ [ 'iced coffee', 'lemonade' ]
+rcs.foodOnly(); ➞ [ 'cinnamon roll', 'vegan burger' ]
 ```
