@@ -26,6 +26,7 @@ and **instance methods**:
 ### Preview
 
 ```
+Rami's coffee shop
 rcs.addOrder("cigarettes"); ➞ "This item is currently unavailable!"
  Rami's coffee shop does not sell cigarettes
 rcs.addOrder("iced tea"); ➞ "This item is currently unavailable!" 
