@@ -1,4 +1,13 @@
 'use strict';
+// Rami Al-Saadi        OOP-JS-Coffee Shop              29/Aug/2022
+
+
+// class MyMath {
+//     static roundOff = (num, places = 2) => {
+//         const x = Math.pow(10, places);
+//         return Math.round(num * x) / x;
+//     }
+// }
 
 class Item {
     constructor(name = '', type = 'food', price = 0) {
@@ -7,17 +16,19 @@ class Item {
         this.price = price;
     }
 }
-let cinnamon = new Item("cinnamon roll", 'food', 1.17);
-let icedCoffee = new Item("iced coffee", 'drink', 1.0);
-let lemonade = new Item('lemonade', 'drink', 0.5);
-let burger = new Item('vegan burger', 'food', 2.0);
 
 class CoffeeShop {
-    constructor(name = 'Rami\'s Coffee Shop', menu = [cinnamon, icedCoffee, lemonade, burger], orders = []) {
+    constructor(name = 'Rami\'s Coffee Shop', menu = [{ name: 'itemName', type: 'food or drink', price: 0 }], orders = []) {
         this.name = name;
         this.menu = menu;
-        this.orders = orders;
+        this.listOrders = orders;
     }
+    get listOrders() {
+        return console.log(this.orders);
+    };
+    set listOrders(orders) {
+        this.orders = orders;
+    };
     addOrder(name) {
         if (this.menu.some(item => item.name === name))
             if (this.orders.push(name))
@@ -32,7 +43,7 @@ class CoffeeShop {
         else
             return console.log('All orders have been fulfilled');
     }
-    listOrders = () => console.log(this.orders)
+    //  listOrders = () => console.log(this.orders)
     dueAmount = () => console.log(this.orders.reduce((total, name) => {
         let item = this.menu.find(item => item.name === name);
         total += item.price;
@@ -55,45 +66,52 @@ class CoffeeShop {
     }
 }
 
+const items = [
+    new Item("cinnamon roll", 'food', 1.17),
+    new Item("iced coffee", 'drink', 1.0),
+    new Item('lemonade', 'drink', 0.5),
+    new Item('vegan burger', 'food', 2.0)];
 
-const tcs = new CoffeeShop();
-tcs.addOrder("hot cocoa")
+const rcs = new CoffeeShop(undefined, items);
+console.log(rcs.name);
+console.log();
+
+rcs.addOrder("cigarettes");
 // ➞ "This item is currently unavailable!"
-// Tesha's coffee shop does not sell hot cocoa
-tcs.addOrder("iced tea")
+// Rami's coffee shop does not sell cigarettes
+rcs.addOrder("iced tea");
 // ➞ "This item is currently unavailable!"
 // specifying the variant of "iced tea" will help the process
-
-tcs.addOrder("cinnamon roll")
+rcs.addOrder("cinnamon roll");
 // ➞  "Order added!"
-tcs.addOrder("iced coffee")
+rcs.addOrder("iced coffee");
 // ➞ "Order added!"
-tcs.listOrders()
+// rcs.listOrders = ["cinnamon roll", "iced coffee", 'lemonade', 'vegan burger'];
+rcs.listOrders;
 // ➞ ["cinnamon roll", "iced coffee"]
 // the list of all the items in the current order
-
-tcs.dueAmount()
+rcs.dueAmount();
 // ➞ 2.17
-tcs.fulfillOrder()
+console.log();
+
+rcs.fulfillOrder();
 // ➞ "The cinnamon roll is ready!"
-tcs.fulfillOrder()
+rcs.fulfillOrder();
 // ➞ "The iced coffee is ready!"
-tcs.fulfillOrder()
+rcs.fulfillOrder();
 // ➞ "All orders have been fulfilled!"
 // all orders have been presumably served
-
-tcs.listOrders()
+rcs.listOrders;
 // ➞ []
 // an empty array is returned if all orders have been exhausted
-
-tcs.dueAmount()
+rcs.dueAmount();
 // ➞ 0.0
+console.log();
+
 // no new orders taken, expect a zero payable
-
-tcs.cheapestItem()
+rcs.cheapestItem();
 // ➞ "lemonade"
-tcs.drinksOnly()
-// ➞ ["orange juice", "lemonade", "cranberry juice", "pineapple juice", "lemon iced tea", "vanilla chai latte", "hot chocolate", "iced coffee"]
-tcs.foodOnly()
-// ➞ ["tuna sandwich", "ham and cheese sandwich", "bacon and egg", "steak", "hamburger", "cinnamon roll"]
-
+rcs.drinksOnly();
+// ➞ [ 'iced coffee', 'lemonade' ]
+rcs.foodOnly();
+// ➞ [ 'cinnamon roll', 'vegan burger' ]
